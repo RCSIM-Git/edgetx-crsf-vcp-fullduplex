@@ -48,7 +48,7 @@
   * @param  None
   * @retval None
   */
-void SystemClock_Config(void)
+__attribute__((used)) void SystemClock_Config(void)
 {
   /* Enable HSE oscillator */
   LL_RCC_HSE_Enable();

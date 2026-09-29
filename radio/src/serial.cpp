@@ -236,8 +236,10 @@ static void serialSetCallBacks(int mode, void* ctx, const etx_serial_port_t* por
     // stream.
     if (drv && drv->setReceiveCb) {
       crsfTrainerStart(ctx, drv);
+      telemetrySetMirrorCb(ctx, sendByte);
     } else {
       crsfTrainerStop();
+      telemetrySetMirrorCb(nullptr, nullptr);
     }
     break;
 #endif
@@ -341,7 +343,7 @@ static void serialSetupPort(int mode, etx_serial_init& params)
     // usbSerialInit() ignores these params. It still has to be non-zero:
     // serialInit() treats a zero baudrate as "nothing to set up".
     params.baudrate = CROSSFIRE_BAUDRATES[1];
-    params.direction = ETX_Dir_RX;
+    params.direction = ETX_Dir_TX_RX;
     break;
 #endif
 

@@ -649,9 +649,9 @@ find_program(BASH bash
 set(OPT "s" CACHE STRING "Optimization mode (0/1/2/s)")
 
 set(COMMON_FLAGS "-mcpu=${MCU} -mthumb -fomit-frame-pointer -fverbose-asm -Wa,-ahlms=firmware.lst")
-set(COMMON_FLAGS "${COMMON_FLAGS} -gdwarf-2 -fno-exceptions -fdata-sections -ffunction-sections")
+set(COMMON_FLAGS "${COMMON_FLAGS} -gdwarf-2 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -fdata-sections -ffunction-sections")
 set(COMMON_FLAGS "${COMMON_FLAGS} -DHSE_VALUE=${HSE_VALUE}")
-set(COMMON_FLAGS "${COMMON_FLAGS} -O${OPT} ${FPU_FLAGS}")
+set(COMMON_FLAGS "${COMMON_FLAGS} -O${OPT} ${FPU_FLAGS} -fno-align-functions -fno-align-jumps -fno-align-loops -fno-align-labels")
 set(COMMON_FLAGS "${COMMON_FLAGS} ${WARNING_FLAGS}")
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${COMMON_FLAGS} -Wimplicit")

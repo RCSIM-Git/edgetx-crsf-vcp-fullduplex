@@ -36,7 +36,7 @@ get_target_build_options() {
             BUILD_OPTIONS+="-DPCB=X7 -DPCBREV=ZORRO"
             ;;
         pocket)
-            BUILD_OPTIONS+="-DPCB=X7 -DPCBREV=POCKET"
+            BUILD_OPTIONS+="-DPCB=X7 -DPCBREV=POCKET -DHELI=NO -DGHOST=NO -DPXX1=OFF -DPXX2=OFF"
             ;;
         mt12)
             BUILD_OPTIONS+="-DPCB=X7 -DPCBREV=MT12"

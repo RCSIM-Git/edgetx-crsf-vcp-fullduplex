@@ -37,7 +37,11 @@
 /  f_findnext(). (0:Disable, 1:Enable 2:Enable with matching altname[] too) */
 
 
-#define FF_USE_MKFS		1
+#if defined(BOOT)
+  #define FF_USE_MKFS		0
+#else
+  #define FF_USE_MKFS		1
+#endif
 /* This option switches f_mkfs() function. (0:Disable or 1:Enable) */
 
 
@@ -49,7 +53,11 @@
 /* This option switches f_expand function. (0:Disable or 1:Enable) */
 
 
-#define FF_USE_CHMOD	1
+#if defined(BOOT)
+  #define FF_USE_CHMOD	0
+#else
+  #define FF_USE_CHMOD	1
+#endif
 /* This option switches attribute manipulation functions, f_chmod() and f_utime().
 /  (0:Disable or 1:Enable) Also FF_FS_READONLY needs to be 0 to enable this option. */
 
@@ -160,7 +168,11 @@
 /  on character encoding. When LFN is not enabled, these options have no effect. */
 
 
-#define FF_FS_RPATH		2
+#if defined(BOOT)
+  #define FF_FS_RPATH		1
+#else
+  #define FF_FS_RPATH		2
+#endif
 /* This option configures support for relative path.
 /
 /   0: Disable relative path and remove related functions.

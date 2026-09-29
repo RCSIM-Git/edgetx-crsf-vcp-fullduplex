@@ -1,5 +1,7 @@
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+add_compile_options(-Os -fno-inline-small-functions -fno-align-functions -fno-align-jumps -fno-align-loops -fno-align-labels)
+
 
 set(BOOTLOADER_SRC ${BOOTLOADER_SRC}
   ${RADIO_SRC_DIR}/os/time_nortos.cpp
@@ -53,6 +55,8 @@ endif()
 
 add_executable(bootloader EXCLUDE_FROM_ALL ${BOOTLOADER_SRC})
 add_dependencies(bootloader ${BITMAPS_TARGET})
+target_compile_options(bootloader PRIVATE -flto)
+target_link_options(bootloader PRIVATE -flto)
 
 target_compile_definitions(stm32_drivers_w_dbg_bl PUBLIC BOOT)
 target_compile_definitions(bootloader PUBLIC BOOT)
