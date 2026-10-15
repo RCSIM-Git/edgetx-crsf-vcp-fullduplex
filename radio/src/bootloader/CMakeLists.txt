@@ -55,8 +55,10 @@ endif()
 
 add_executable(bootloader EXCLUDE_FROM_ALL ${BOOTLOADER_SRC})
 add_dependencies(bootloader ${BITMAPS_TARGET})
-target_compile_options(bootloader PRIVATE -flto)
-target_link_options(bootloader PRIVATE -flto)
+if(CPU_TYPE STREQUAL STM32F4)
+  target_compile_options(bootloader PRIVATE -flto)
+  target_link_options(bootloader PRIVATE -flto)
+endif()
 
 target_compile_definitions(stm32_drivers_w_dbg_bl PUBLIC BOOT)
 target_compile_definitions(bootloader PUBLIC BOOT)
