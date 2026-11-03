@@ -1,5 +1,8 @@
 # 📡 EdgeTX — Bidirectional CRSF USB-VCP & Real-Time Telemetry Mirror for GCS
 
+> 🌐 **Language / Język:** **English** | [Polski](README_PL.md)
+
+
 [![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 [![EdgeTX Version](https://img.shields.io/badge/EdgeTX-2.10-orange.svg)](https://github.com/EdgeTX/edgetx)
 [![Status](https://img.shields.io/badge/Status-Functional_%26_Bench_Tested-success.svg)](#-supported-radios--binaries)
@@ -169,4 +172,3 @@ See [`BUILD_INSTRUCTIONS.md`](BUILD_INSTRUCTIONS.md) for complete CMake flags, c
 * **Complete Corresponding Source:** Published under [RCSIM-Git/edgetx-crsf-vcp-fullduplex](https://github.com/RCSIM-Git/edgetx-crsf-vcp-fullduplex).
 * **License:** Distributed under the [GNU General Public License v2.0 (GPL-2.0)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
 * **Disclaimer:** Unofficial community builds developed for the RCSIM project. Distributed without warranty of any kind.
-
